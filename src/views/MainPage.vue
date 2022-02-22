@@ -1,10 +1,10 @@
 <template>
   <div class="content">
     <div class="content-btn">
-      <button class="content-btn__add btn">
+      <button class="content-btn__add btn" @click="addRandomCart">
         Add To Cart
       </button>
-      <button class="content-btn__clear btn">
+      <button class="content-btn__clear btn" @click="clearCart">
         Clear Cart
       </button>
     </div>
@@ -14,9 +14,24 @@
 
 <script>
 import CartDrawer from '@/components/CartDrawer.vue'
+
 export default {
   components: {
     CartDrawer
+  },
+  mounted() {
+    // add products to state
+    this.$store.dispatch('fetchProducts')
+  },
+  methods: {
+    addRandomCart() {
+      const products = this.$store.getters.getProducts
+      const random = Math.floor(Math.random() * products.length)
+      this.$store.dispatch('addProductToCart', products[random])
+    },
+    clearCart() {
+      this.$store.dispatch('clearCart')
+    }
   }
 }
 </script>

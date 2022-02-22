@@ -15,4 +15,10 @@ body {
   text-align: center;
   color: #2c3e50;
 }
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
 </style>

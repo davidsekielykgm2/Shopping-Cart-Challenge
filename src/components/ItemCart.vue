@@ -1,35 +1,55 @@
 <template>
   <div class="item-cart">
     <div class="item-cart__img">
-      img
+      <img :src="imageWithHTTP" :alt="product.name" />
     </div>
     <div class="item-cart__info">
       <div class="item-cart__title">
-        Title
+        {{ product.name }}
       </div>
       <div class="item-cart__numbers">
         <div class="item-cart__qt">
-          Quantity: 
+          Quantity: {{ product.quantity }}
         </div>
         <div class="item-cart__price">
-          Price
+          {{ price }}
         </div>
       </div>
     </div>
   </div>
 </template>
 
+<script>
+export default {
+  props: {
+    product: {
+      type: Object
+    }
+  },
+  computed: {
+    imageWithHTTP() {
+      return `https://${this.product.imageUrl}`
+    },
+    price() {
+      const total = this.product.price.current.value * this.product.quantity
+      const priceFloat = parseFloat(total).toFixed(2)
+      return `$${priceFloat}`
+    }
+  }
+}
+</script>
+
 <style scoped>
 .item-cart {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   padding: .5rem 0;
   margin-bottom: .5rem;
 }
 
 .item-cart__img {
   width: 25%;
-  border: 1px solid red;
 }
 .item-cart__info {
   width: 60%;

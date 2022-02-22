@@ -1,32 +1,25 @@
 <template>
-  <div class="cart">
-    <div class="cart-overlay"></div>
+  <div class="cart" :class="{ in: getOpenCart }">
+    <div class="cart-overlay" @click="closeCart"></div>
     <div class="cart-content">
       <div class="cart-header">
-        <button class="btn">
+        <button class="btn" @click="closeCart">
           Close Cart
         </button>
       </div>
       <div class="cart-body">
-        <item-cart />
-        <item-cart />
-        <item-cart />
-        <item-cart />
-        <item-cart />
-        <item-cart />
-        <item-cart />
-        <item-cart />
-        <item-cart />
-        <item-cart />
-        <item-cart />
-        <item-cart />
+        <item-cart 
+          v-for="product in getListCart"
+          :key="product.id"
+          :product="product"
+        />
       </div>
       <div class="cart-footer">
         <div class="cart-footer__total-title">
           Total
         </div>
         <div class="cart-footer__total-mount">
-          $1234
+          ${{ getTotalCart }}
         </div>
       </div>
     </div>
@@ -35,16 +28,31 @@
 
 <script>
 import ItemCart from '@/components/ItemCart.vue'
+import { mapGetters } from 'vuex'
+import { CHANGE_OPEN_CART } from '@/store/mutations/types'
+
 export default {
   components: {
     ItemCart
+  },
+  computed: {
+    ...mapGetters([
+      'getListCart',
+      'getOpenCart',
+      'getTotalCart'
+    ])
+  },
+  methods: {
+    closeCart() {
+      this.$store.commit(CHANGE_OPEN_CART, { open: false })
+    }
   }
 }
 </script>
 
 <style scoped>
 .cart {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   width: 100%;
@@ -52,7 +60,7 @@ export default {
   z-index: 1;
   display: flex;
   transform: translateX(100%);
-  transition: 1s;
+  transition: .5s;
 }
 .cart.in {
   transform: translateX(0);
@@ -66,8 +74,7 @@ export default {
 
 .cart-content {
   background-color: #fff;
-  width: 75%;
-  max-width: 300px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -82,6 +89,7 @@ export default {
   background-color: transparent;
   border: none;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .cart-body {
