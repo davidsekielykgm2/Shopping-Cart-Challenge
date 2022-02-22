@@ -1,0 +1,101 @@
+[
+  {
+    "id": 200222441,
+    "name": "ASOS DESIGN platform heeled chelsea boots in patent black leather",
+    "price": {
+      "current": {
+        "value": 112,
+        "text": "$112.00"
+      },
+      "previous": {
+        "value": 140,
+        "text": "$140.00"
+      },
+      "rrp": {
+        "value": null,
+        "text": ""
+      },
+      "isMarkedDown": true,
+      "isOutletPrice": false,
+      "currency": "USD"
+    },
+    "colour": "Black",
+    "colourWayId": 200222449,
+    "brandName": "ASOS DESIGN",
+    "hasVariantColours": false,
+    "hasMultiplePrices": false,
+    "groupId": null,
+    "productCode": 101778379,
+    "productType": "Product",
+    "url": "asos-design/asos-design-platform-heeled-chelsea-boots-in-patent-black-leather/prd/200222441?clr=black&colourWayId=200222449",
+    "imageUrl": "images.asos-media.com/products/asos-design-platform-heeled-chelsea-boots-in-patent-black-leather/200222441-1-black",
+    "videoUrl": null,
+    "isSellingFast": false
+  },
+  {
+    "id": 202307637,
+    "name": "Pull&Bear lace up sneakers in black pu",
+    "price": {
+      "current": {
+        "value": 36.8,
+        "text": "$36.80"
+      },
+      "previous": {
+        "value": 46,
+        "text": "$46.00"
+      },
+      "rrp": {
+        "value": null,
+        "text": ""
+      },
+      "isMarkedDown": true,
+      "isOutletPrice": false,
+      "currency": "USD"
+    },
+    "colour": "Black",
+    "colourWayId": 202307646,
+    "brandName": "Pull&Bear",
+    "hasVariantColours": false,
+    "hasMultiplePrices": false,
+    "groupId": null,
+    "productCode": 116372717,
+    "productType": "Product",
+    "url": "pullbear/pullbear-lace-up-sneakers-in-black-pu/prd/202307637?clr=black&colourWayId=202307646",
+    "imageUrl": "images.asos-media.com/products/pullbear-lace-up-sneakers-in-black-pu/202307637-1-black",
+    "videoUrl": null,
+    "isSellingFast": false
+  },
+  {
+    "id": 202308080,
+    "name": "Pull&Bear mesh runner in white",
+    "price": {
+      "current": {
+        "value": 39.9,
+        "text": "$39.90"
+      },
+      "previous": {
+        "value": 49.9,
+        "text": "$49.90"
+      },
+      "rrp": {
+        "value": null,
+        "text": ""
+      },
+      "isMarkedDown": true,
+      "isOutletPrice": false,
+      "currency": "USD"
+    },
+    "colour": "White",
+    "colourWayId": 202308081,
+    "brandName": "Pull&Bear",
+    "hasVariantColours": false,
+    "hasMultiplePrices": false,
+    "groupId": null,
+    "productCode": 116373267,
+    "productType": "Product",
+    "url": "pullbear/pullbear-mesh-runner-in-white/prd/202308080?clr=white&colourWayId=202308081",
+    "imageUrl": "images.asos-media.com/products/pullbear-mesh-runner-in-white/202308080-1-white",
+    "videoUrl": null,
+    "isSellingFast": false
+  }
+]
